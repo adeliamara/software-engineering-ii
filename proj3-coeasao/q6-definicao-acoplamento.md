@@ -1,0 +1,1 @@
+Quando o sistema possui alto acoplamento significa que há uma grande dependencia entre as classes e modulos. Isso resulta em dificuldades de manutenção no código, pois a alteração de uma parte pode afetar diversas outras.
