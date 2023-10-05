@@ -1,0 +1,3 @@
+interface Validator {
+    executar(): void;
+} 

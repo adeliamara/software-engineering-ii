@@ -1,0 +1,1 @@
+[{"id":1,"texto":"Conteúdo do primeiro post de teste.","autor":{"id":1,"nome":"Autor Teste","email":"autor@teste.com"},"data":"2023-10-05T03:55:11.747Z","quantidadeDeLikes":0},{"id":2,"texto":"Conteúdo do segundo post de teste.","autor":{"id":1,"nome":"Autor Teste","email":"autor@teste.com"},"data":"2023-10-05T03:55:11.747Z","quantidadeDeLikes":0}]
