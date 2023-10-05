@@ -1,5 +1,6 @@
 import { CalculadoraImpostoDeRenda } from "./CalculadoraImpostoDeRenda";
 import { GerarRelatorio } from "./GerarRelatorio";
+import { Validator } from "./Validator";
 
 export class ImpostoDeRenda {
     private cpfContribuinte: string;
@@ -21,7 +22,13 @@ export class ImpostoDeRenda {
     getDespesas(): number[] {
         return this.despesas;
     }
-    processar(): void {
+    processar(validators: Validator[]): void {
+        console.log(validators)
+    for (let validator of validators) {
+        console.log(validator)
+
+        validator.executar(this)
+    }
       const calculadora: CalculadoraImpostoDeRenda = new CalculadoraImpostoDeRenda();
       const impostoDevido: number = calculadora.calcular(this.rendimentos, this.despesas);
 
