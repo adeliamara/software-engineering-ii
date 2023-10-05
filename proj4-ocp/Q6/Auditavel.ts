@@ -1,3 +1,5 @@
+import { Processable } from "./Processable";
+
 export interface Auditavel {
-    executarAuditoria(): void;
+    executarAuditoria(processable: Processable): void;
 }

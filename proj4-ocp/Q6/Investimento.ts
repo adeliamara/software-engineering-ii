@@ -1,9 +1,11 @@
+import { Processable } from "./Processable";
+
 export enum TipoInvestimento {
     RENDA_FIXA,
     RENDA_VARIAVEL,
   }
 
-export class Investimento {
+export class Investimento implements Processable{
     private id: number;
     private valor: number;
     private tipo: TipoInvestimento;
@@ -34,9 +36,5 @@ export class Investimento {
 
     public getStatusRisco(): string {
         return this.statusRisco;
-      }
-
-      executarAuditoria(): void {
-        console.log('investimento auditada')
       }
   }

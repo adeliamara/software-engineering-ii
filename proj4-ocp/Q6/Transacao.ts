@@ -1,10 +1,12 @@
+import { Processable } from "./Processable";
+
 export enum TipoTransacao {
     CREDITO,
     DEBITO,
     DINHEIRO
-  }
+}
 
-export class Transacao {
+export class Transacao implements Processable {
     private id: number;
     private valor: number;
     private tipo: TipoTransacao;
@@ -25,9 +27,5 @@ export class Transacao {
   
     public getTipo(): TipoTransacao {
       return this.tipo;
-    }
-
-    executarAuditoria(): void {
-        console.log('transacao auditada')
     }
   }

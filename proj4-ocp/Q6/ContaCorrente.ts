@@ -1,7 +1,8 @@
 import { Auditavel } from "./Auditavel";
+import { Processable } from "./Processable";
 import { Transacao } from "./Transacao";
 
-export class ContaCorrente implements Auditavel {
+export class ContaCorrente implements Processable {
 
     private numero: string;
     private saldo: number;
@@ -27,10 +28,5 @@ export class ContaCorrente implements Auditavel {
   
     public adicionarTransacao(transacao: Transacao): void {
       this.transacoes.push(transacao);
-    }
-
-    executarAuditoria(): void {
-      console.log('contada auditada')
-
     }
   }
