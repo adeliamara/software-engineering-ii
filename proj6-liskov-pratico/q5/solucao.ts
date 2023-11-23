@@ -27,12 +27,18 @@ class Postagem implements Publicavel {
     private reacoes: Reacao[] = [];
     private comentarios: Comentario[] = [];
 
-    constructor(id: string, autor: Perfil, conteudo: string) {
+    constructor(id: string, autor: Perfil, conteudo: string, reacao?: Reacao, comentario?: Comentario) {
         this.id = id;
         this.autor = autor;
         this.conteudo = conteudo;
+        if (reacao){
+            this.reacoes.push(reacao);
+        }
+        if (comentario) {
+            this.comentarios.push(comentario);
+        }
     }
-    
+
     getAutor(): Perfil {
         throw new Error("Method not implemented.");
     }
@@ -54,7 +60,7 @@ class Reacao implements Publicavel{
 
     constructor(id: string, autor: Perfil, tipoReacao: string) {
         this.tipoReacao = tipoReacao;
-        this.postagem = new Postagem(id, autor, "")
+        this.postagem = new Postagem(id, autor, "",this)
     }
     getAutor(): Perfil {
         throw new Error("Method not implemented.");
@@ -72,7 +78,7 @@ class Comentario implements Publicavel {
     public postagem: Postagem;
 
     constructor(id: string, autor: Perfil, conteudo: string, postagemOriginal: Postagem) {
-        this.postagem = new Postagem(id, autor, "")
+        this.postagem = new Postagem(id, autor, "", undefined, this)
         this.postagemOriginal = postagemOriginal;
     }
     getAutor(): Perfil {
